@@ -1,6 +1,7 @@
 import pytest
 from refactoring.statement import statement
 
+
 @pytest.fixture
 def plays():
     return {
@@ -9,55 +10,50 @@ def plays():
         "othello": {"name": "Othello", "type": "tragedy"},
     }
 
+
 @pytest.fixture
 def statement1():
     return {
-            "customer": "BigCo",
-            "performances": [
-                {"playID": "hamlet",
-                    "audience": 55},
-                    {"playID": "as-like",
-                    "audience": 35},
-                    {"playID": "othello",
-                    "audience": 40},
-            ],
-        }
+        "customer": "BigCo",
+        "performances": [
+            {"playID": "hamlet", "audience": 55},
+            {"playID": "as-like", "audience": 35},
+            {"playID": "othello", "audience": 40},
+        ],
+    }
+
 
 @pytest.fixture
 def statement2():
     return {
-            "customer": "SmallCo",
-            "performances": [
-                {"playID": "hamlet",
-                    "audience": 30},
-                    {"playID": "as-like",
-                    "audience": 20},
-                    {"playID": "othello",
-                    "audience": 10},
-            ],
-        }
+        "customer": "SmallCo",
+        "performances": [
+            {"playID": "hamlet", "audience": 30},
+            {"playID": "as-like", "audience": 20},
+            {"playID": "othello", "audience": 10},
+        ],
+    }
 
 
 @pytest.fixture
 def zero_audience():
     return {
-            "customer": "ZeroCo",
-            "performances": [
-                {"playID": "hamlet",
-                    "audience": 0},
-                    {"playID": "as-like",
-                    "audience": 0},
-                    {"playID": "othello",
-                    "audience": 0},
-            ],
-        }
+        "customer": "ZeroCo",
+        "performances": [
+            {"playID": "hamlet", "audience": 0},
+            {"playID": "as-like", "audience": 0},
+            {"playID": "othello", "audience": 0},
+        ],
+    }
+
 
 @pytest.fixture
 def no_performances():
     return {
-            "customer": "NoCo",
-            "performances": [],
-        }
+        "customer": "NoCo",
+        "performances": [],
+    }
+
 
 class TestStatement1:
     @pytest.fixture(autouse=True)
@@ -83,6 +79,7 @@ class TestStatement1:
     def test_statement_volume_credits(self):
         assert self.result.endswith("You earned 47 credits\n")
 
+
 class TestStatement2:
     @pytest.fixture(autouse=True)
     def generate_statement(self, statement2, plays):
@@ -107,6 +104,7 @@ class TestStatement2:
     def test_statement_volume_credits(self):
         assert self.result.endswith("You earned 4 credits\n")
 
+
 class TestZeroAudience:
     @pytest.fixture(autouse=True)
     def generate_statement(self, zero_audience, plays):
@@ -130,6 +128,7 @@ class TestZeroAudience:
 
     def test_statement_volume_credits(self):
         assert self.result.endswith("You earned 0 credits\n")
+
 
 class TestNoPerformances:
     @pytest.fixture(autouse=True)
