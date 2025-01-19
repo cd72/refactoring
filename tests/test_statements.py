@@ -1,5 +1,5 @@
 import pytest
-from refactoring.statement import statement
+from src.refactoring.statement import statement
 
 
 @pytest.fixture
