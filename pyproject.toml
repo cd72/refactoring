@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-refactoring = "refactoring:main"
+refactoring = "refactoring.run:main"
 
 [build-system]
 requires = ["hatchling"]

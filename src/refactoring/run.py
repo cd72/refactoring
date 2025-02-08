@@ -1,4 +1,4 @@
-from refactoring.statement import statement
+from refactoring.statement import Statement
 import json
 
 
@@ -7,7 +7,7 @@ def main():
         invoices = json.load(f)
     with open("data/plays.json") as f:
         plays = json.load(f)
-    print(statement(invoices[0], plays))
+    print(Statement().statement(invoices[0], plays))
 
 
 if __name__ == "__main__":

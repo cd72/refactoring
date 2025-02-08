@@ -1,5 +1,5 @@
 import pytest
-from src.refactoring.statement import statement
+from src.refactoring.statement import Statement
 
 
 @pytest.fixture
@@ -58,7 +58,7 @@ def no_performances():
 class TestStatement1:
     @pytest.fixture(autouse=True)
     def generate_statement(self, statement1, plays):
-        self.result = statement(statement1, plays)
+        self.result = Statement().statement(statement1, plays)
         self.result_lines = self.result.split("\n")
 
     def test_statement_title(self):
@@ -83,7 +83,7 @@ class TestStatement1:
 class TestStatement2:
     @pytest.fixture(autouse=True)
     def generate_statement(self, statement2, plays):
-        self.result = statement(statement2, plays)
+        self.result = Statement().statement(statement2, plays)
         self.result_lines = self.result.split("\n")
 
     def test_statement_title(self):
@@ -108,7 +108,7 @@ class TestStatement2:
 class TestZeroAudience:
     @pytest.fixture(autouse=True)
     def generate_statement(self, zero_audience, plays):
-        self.result = statement(zero_audience, plays)
+        self.result = Statement().statement(zero_audience, plays)
         self.result_lines = self.result.split("\n")
 
     def test_statement_title(self):
@@ -133,7 +133,7 @@ class TestZeroAudience:
 class TestNoPerformances:
     @pytest.fixture(autouse=True)
     def generate_statement(self, no_performances, plays):
-        self.result = statement(no_performances, plays)
+        self.result = Statement().statement(no_performances, plays)
         self.result_lines = self.result.split("\n")
 
     def test_statement_title(self):
