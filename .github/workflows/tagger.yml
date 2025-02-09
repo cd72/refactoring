@@ -32,9 +32,9 @@ jobs:
             touch CHANGELOG.md
         - name: commitizen dry run
           run: |
-            cz bump --dry-run --yes 2>/dev/null
-            echo "cz-bump-dry-run-exit-code=$?" >> $GITHUB_OUTPUT
+            cz bump --dry-run --yes 2>&1
+            echo "exit-code=$?" >> $GITHUB_OUTPUT
         - name: commitizen bump
           run: |
-            cz bump --yes 2>/dev/null
+            cz --debug bump --yes 2>&1
             echo "cz-bump-exit-code=$?" >> $GITHUB_OUTPUT
