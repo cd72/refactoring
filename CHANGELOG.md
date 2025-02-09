@@ -1,3 +1,9 @@
+## 1.1.0 (2025-02-09)
+
+### Feat
+
+- Add github action for tagging
+
 ## 1.0.4 (2025-02-08)
 
 ### Refactor
