@@ -28,6 +28,8 @@ jobs:
           run: |
             git log -5 --oneline
             git tag -l
+            ls -l
+            touch CHANGELOG.md
         - name: commitizen dry run
           run: |
             cz bump --dry-run --yes 2>/dev/null
