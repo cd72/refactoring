@@ -25,7 +25,9 @@ jobs:
             python -m pip install --upgrade pip
             pip install commitizen
         - name: show git log
-          run: git log -5 --oneline
+          run: |
+            git log -5 --oneline
+            git tag -l
         - name: commitizen dry run
           run: |
             cz bump --dry-run --yes 2>/dev/null
