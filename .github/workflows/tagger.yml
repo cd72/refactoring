@@ -29,8 +29,8 @@ jobs:
         - name: commitizen dry run
           run: |
             cz bump --dry-run --yes 2>/dev/null
-            echo "cz-bump-dry-run-exit-code: $?" >> $GITHUB_OUTPUT
+            echo "cz-bump-dry-run-exit-code=$?" >> $GITHUB_OUTPUT
         - name: commitizen bump
           run: |
             cz bump --yes 2>/dev/null
-            echo "cz-bump-exit-code: $?" >> $GITHUB_OUTPUT
+            echo "cz-bump-exit-code=$?" >> $GITHUB_OUTPUT
