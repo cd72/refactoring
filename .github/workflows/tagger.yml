@@ -28,8 +28,8 @@ jobs:
           run: |
             git log -5 --oneline
             git tag -l
-            ls -l
-            touch CHANGELOG.md
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git config --global user.name "github-actions[bot]"
         - name: commitizen dry run
           run: |
             cz bump --dry-run --yes 2>&1
