@@ -24,3 +24,6 @@ jobs:
           run: |
             python -m pip install --upgrade pip
             pip install commitizen
+        - name: commitizen dry run
+          run: |
+            cz bump --dry-run --yes 2>/dev/null
