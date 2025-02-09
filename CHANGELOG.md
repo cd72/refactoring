@@ -1,3 +1,14 @@
+## 1.2.0 (2025-02-09)
+
+### Feat
+
+- add commitizen bump step to GitHub Actions workflow
+
+### Fix
+
+- update output formatting for commitizen dry run and bump steps
+- cz dry run
+
 ## 1.1.0 (2025-02-09)
 
 ### Feat

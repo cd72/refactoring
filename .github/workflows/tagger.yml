@@ -1,4 +1,4 @@
-name: Github Action which will tag the commit with the version number
+name: Tag the commit with the version number
 on:
   push:
     branches:
