@@ -36,5 +36,5 @@ jobs:
             echo "exit-code=$?" >> $GITHUB_OUTPUT
         - name: commitizen bump
           run: |
-            cz --debug bump --yes 2>&1
+            cz bump --yes 2>&1
             echo "cz-bump-exit-code=$?" >> $GITHUB_OUTPUT
